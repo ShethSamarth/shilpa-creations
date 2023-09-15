@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#2d2d2d] text-white">
       <div className="flex flex-col md:flex-row justify-between items-center">
-        <div className="flex p-5">
+        <div className="flex flex-col sm:flex-row p-5">
           <div className="mx-5 space-y-2">
             <p className="flex mb-3">
               <Phone className="h-5 w-5 mr-2" /> Call Us :{" "}
@@ -27,7 +27,7 @@ const Footer = () => {
               +4407946894584
             </Link>
           </div>
-          <div className="mx-5">
+          <div className="mx-5 mt-5 sm:mt-0">
             <p className="flex mb-3">
               <Mail className="h-5 w-5 mr-2" /> Mail Us :{" "}
             </p>
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
         </div>
         <Link href="/contact" className="mx-10 mb-5 md:mb-0">
-          <Button variant="destructive">
+          <Button variant="secondary">
             Contact Form <ArrowRight className="h-5 w-5 ml-2" />
           </Button>
         </Link>

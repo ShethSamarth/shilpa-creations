@@ -28,8 +28,6 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>
 
 const ContactForm = () => {
-  const [loading, setLoading] = useState(false)
-
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -63,11 +61,7 @@ const ContactForm = () => {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Enter Name"
-                      {...field}
-                    />
+                    <Input placeholder="Enter Name" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -81,7 +75,6 @@ const ContactForm = () => {
                   <FormLabel>Mobile No.</FormLabel>
                   <FormControl>
                     <Input
-                      disabled={loading}
                       placeholder="Enter Mobile No."
                       {...field}
                       type="number"
@@ -100,11 +93,7 @@ const ContactForm = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder="Enter Email"
-                      {...field}
-                    />
+                    <Input placeholder="Enter Email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -119,18 +108,14 @@ const ContactForm = () => {
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Textarea
-                      disabled={loading}
-                      placeholder="Enter Message"
-                      {...field}
-                    />
+                    <Textarea placeholder="Enter Message" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
           </div>
-          <Button disabled={loading} className="w-full" type="submit">
+          <Button className="w-full bg-[#3b5d50]" type="submit">
             Submit
           </Button>
         </form>

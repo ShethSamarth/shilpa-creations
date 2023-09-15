@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react"
+import { MapPin, Navigation2 } from "lucide-react"
 
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -20,7 +20,7 @@ const ServiceAreas = ({ about }: ServiceAreasProps) => {
         {about.serviceAreas.map((location, i) => (
           <Card key={i}>
             <CardContent className="flex flex-col justify-center items-center space-y-4">
-              <MapPin className="h-10 w-10 text-red-600 mt-8" />
+              <Navigation2 className="h-10 w-10 text-[#3b5d50] mt-8 rotate-45" />
               <p className="font-semibold">{location}</p>
             </CardContent>
           </Card>

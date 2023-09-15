@@ -1,6 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
+import { cn } from "@/lib/utils"
 
 const font = Montserrat({ subsets: ["latin"] })
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={cn(font.className, "overflow-x-hidden")}>
+        {children}
+      </body>
     </html>
   )
 }

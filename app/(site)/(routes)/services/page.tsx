@@ -17,31 +17,25 @@ const ServicesPage = async () => {
   return (
     <div className="bg-[#F2F2F2]">
       <Banner page="services" />
-      <section className="max-w-5xl mx-10 lg:mx-auto space-y-10 py-10">
-        {services.map((service, i) => (
+      <section className="max-w-5xl mx-10 lg:mx-auto py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map((service) => (
           <Card key={service._id}>
-            <CardContent className="flex flex-col md:flex-row p-5 items-center">
-              <aside
-                className={cn(
-                  "order-2",
-                  i % 2 === 0 ? "md:order-1" : "md:order-2"
-                )}
-              >
-                <h1 className="text-xl font-semibold text-center md:text-left pt-5 md:pt-0">
-                  {service.title}
-                </h1>
-                <p className="text-sm py-5">{service.body}</p>
-              </aside>
+            <CardContent className="p-5">
               <Image
                 src={urlFor(service.mainImage).url()}
                 width={400}
                 height={400}
                 alt={service.mainImage.alt}
                 className={cn(
-                  "h-56 w-80 sm:h-60 sm:w-96 object-cover rounded-md order-1",
-                  i % 2 === 0 ? "md:order-2" : "md:order-1 md:mr-10"
+                  "h-56 w-80 sm:h-60 sm:w-96 object-cover rounded-md mx-auto"
                 )}
               />
+              <aside>
+                <h1 className="text-xl font-semibold text-center pt-5">
+                  {service.title}
+                </h1>
+                <p className="text-sm py-5">{service.body}</p>
+              </aside>
             </CardContent>
           </Card>
         ))}

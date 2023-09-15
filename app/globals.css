@@ -9,7 +9,7 @@ body,
 }
 
 .bg-img {
-  background-image: url("/banner.jpg");
+  /* background-image: url("/banner.jpg"); */
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

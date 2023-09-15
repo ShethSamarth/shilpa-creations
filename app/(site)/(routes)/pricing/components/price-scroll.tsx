@@ -22,9 +22,7 @@ const PriceScroll = ({ list }: PriceScrollProps) => {
           </>
         ))}
         <Link href="/contact">
-          <Button className="w-full mt-3" variant="destructive">
-            Enquire Now
-          </Button>
+          <Button className="w-full">Enquire Now</Button>
         </Link>
       </div>
     </ScrollArea>

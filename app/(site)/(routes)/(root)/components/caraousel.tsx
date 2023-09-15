@@ -17,7 +17,8 @@ const Caraousel = ({ sliders }: CaraouselProps) => {
       showStatus={false}
       showThumbs={false}
       interval={4000}
-      showArrows={true}
+      showArrows
+      emulateTouch
     >
       {sliders.map((slider) => (
         <Image

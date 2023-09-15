@@ -33,7 +33,7 @@ const Navbar = () => {
   const pathname = usePathname()
   return (
     <header className="bg-[#f2f2f2] px-10 pt-5 md:pt-14 pb-5 flex justify-between items-center ">
-      <Link href="/" className="font-bold text-2xl text-[#99111e]">
+      <Link href="/" className="font-bold text-2xl text-[#3b5d50]">
         Shilpa Creations
       </Link>
       <nav className="hidden md:flex space-x-8">
@@ -42,7 +42,7 @@ const Navbar = () => {
             href={route.href}
             key={route.label}
             className={cn(
-              "hover:text-[#99111E] hover:scale-110 transition ease-in-out",
+              "hover:text-[#3b5d50] hover:scale-110 transition ease-in-out",
               pathname === route.href
                 ? "text-black font-semibold"
                 : "text-[#696969]"
