@@ -3,10 +3,16 @@
 import { useEffect, useState } from "react"
 import { Menu } from "lucide-react"
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
+import Link from "next/link"
 
 interface MobileNavbarProps {
   routes: {
@@ -16,7 +22,6 @@ interface MobileNavbarProps {
 }
 
 const MobileNavbar = ({ routes }: MobileNavbarProps) => {
-  const router = useRouter()
   const pathname = usePathname()
   const [isMounted, setIsMounted] = useState(false)
 
@@ -34,18 +39,19 @@ const MobileNavbar = ({ routes }: MobileNavbarProps) => {
       <SheetContent side="right" className="p-0">
         <nav className="bg-[#f2f2f2] h-screen flex flex-col pt-20">
           {routes.map((route) => (
-            <button
-              key={route.label}
-              onClick={() => window.location.replace(route.href)}
-              className={cn(
-                "text-center p-3 border-b hover:text-[#3366CC] hover:scale-110 transition ease-in-out",
-                pathname === route.href
-                  ? "text-black font-semibold"
-                  : "text-[#696969]"
-              )}
-            >
-              {route.label}
-            </button>
+            <SheetClose asChild key={route.label}>
+              <Link
+                href={route.href}
+                className={cn(
+                  "text-center p-3 border-b hover:text-[#3366CC] hover:scale-110 transition ease-in-out",
+                  pathname === route.href
+                    ? "text-black font-semibold"
+                    : "text-[#696969]"
+                )}
+              >
+                {route.label}
+              </Link>
+            </SheetClose>
           ))}
         </nav>
       </SheetContent>
