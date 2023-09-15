@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from "react"
 import { Menu } from "lucide-react"
-import Link from "next/link"
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 
 interface MobileNavbarProps {
   routes: {
@@ -17,6 +16,7 @@ interface MobileNavbarProps {
 }
 
 const MobileNavbar = ({ routes }: MobileNavbarProps) => {
+  const router = useRouter()
   const pathname = usePathname()
   const [isMounted, setIsMounted] = useState(false)
 
@@ -34,9 +34,9 @@ const MobileNavbar = ({ routes }: MobileNavbarProps) => {
       <SheetContent side="right" className="p-0">
         <nav className="bg-[#f2f2f2] h-screen flex flex-col pt-20">
           {routes.map((route) => (
-            <Link
+            <button
               key={route.label}
-              href={route.href}
+              onClick={() => window.location.replace(route.href)}
               className={cn(
                 "text-center p-3 border-b hover:text-[#3366CC] hover:scale-110 transition ease-in-out",
                 pathname === route.href
@@ -45,7 +45,7 @@ const MobileNavbar = ({ routes }: MobileNavbarProps) => {
               )}
             >
               {route.label}
-            </Link>
+            </button>
           ))}
         </nav>
       </SheetContent>
