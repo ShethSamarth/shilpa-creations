@@ -8,7 +8,7 @@ import Link from "next/link"
 export const revalidate = 200
 
 const GalleryPage = async () => {
-  const galleryQuery = groq`*[_type == "gallery"] [0...3] | order(_createdAt asc)`
+  const galleryQuery = groq`*[_type == "gallery"] | order(_createdAt asc)`
   const gallery: Gallery[] = await client.fetch(galleryQuery)
 
   return (
