@@ -9,6 +9,7 @@ export default defineType({
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
       name: "image",
@@ -22,6 +23,7 @@ export default defineType({
           name: "alt",
           type: "string",
           title: "Alternative Text",
+          validation: (Rule) => Rule.required().min(1),
         },
       ],
     }),

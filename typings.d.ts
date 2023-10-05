@@ -30,6 +30,7 @@ interface About extends Base {
 interface Gallery extends Base {
   title: string
   image: Image
+  imageUrl: string
 }
 
 interface Service extends Base {

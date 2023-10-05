@@ -9,6 +9,7 @@ export default defineType({
       name: "aboutTitle",
       title: "About Title",
       type: "string",
+      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
       name: "mainImage",
@@ -22,6 +23,7 @@ export default defineType({
           name: "alt",
           type: "string",
           title: "Alternative Text",
+          validation: (Rule) => Rule.required().min(1),
         },
       ],
     }),
@@ -35,11 +37,13 @@ export default defineType({
       name: "serviceAreasTitle",
       title: "Service Areas Title",
       type: "string",
+      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
       name: "serviceAreasBody",
       title: "Service Areas Body",
       type: "text",
+      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
       name: "serviceAreas",

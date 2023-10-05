@@ -15,7 +15,7 @@ const HomePage = async () => {
   const sliderQuery = groq`*[_type == "slider"] | order(_createdAt asc)`
   const sliders: Slider[] = await client.fetch(sliderQuery)
 
-  const galleryQuery = groq`*[_type == "gallery"] | order(_createdAt asc)`
+  const galleryQuery = groq`*[_type == "gallery"] [0...3] { ..., "imageUrl": image.asset->url} | order(_createdAt asc)`
   const gallery: Gallery[] = await client.fetch(galleryQuery)
 
   return (
