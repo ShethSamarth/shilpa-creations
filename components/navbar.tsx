@@ -35,7 +35,13 @@ const Navbar = () => {
   return (
     <header className="bg-[#f2f2f2] px-5 md:px-10 pt-5 md:pt-14 pb-5 flex justify-between items-center ">
       <Link href="/">
-        <Image src="/logo.png" width={200} height={50} alt="Shilpa Creations" />
+        <Image
+          src="/logo.jpeg"
+          width={120}
+          height={50}
+          alt="Shilpa Creations"
+          className="mix-blend-multiply"
+        />
       </Link>
       <nav className="hidden md:flex space-x-8">
         {routes.map((route) => (
