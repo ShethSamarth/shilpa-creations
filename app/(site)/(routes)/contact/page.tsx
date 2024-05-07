@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 
 import Banner from "@/components/banner"
 
@@ -17,16 +17,6 @@ const ContactPage = () => {
           <h1 className="text-3xl font-bold tracking-tight pb-5 pt-5 md:pt-0">
             Contact Details
           </h1>
-          <h4 className="pt-3 font-medium">Address :</h4>
-          <p className="flex">
-            <MapPin className="h-5 w-5 mr-2" color="#3b5d50" /> Shilpa Solanki
-            <br />
-            52 Shotteswell road
-            <br />
-            Shirley Solihull
-            <br />
-            B90 2RN West Midlands
-          </p>
           <h4 className="pt-3 font-medium">Phone :</h4>
           <p className="flex items-center">
             <Phone className="h-5 w-5 mr-2" color="#3b5d50" />{" "}

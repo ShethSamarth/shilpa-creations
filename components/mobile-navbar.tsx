@@ -7,7 +7,7 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetTrigger,
+  SheetTrigger
 } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
